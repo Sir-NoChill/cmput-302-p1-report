@@ -2,6 +2,8 @@
 
 This is the latex document for our 2nd deliverable in the course. Below I outline a procedure for installing LaTeX and setting up the development environment.
 
+The principle file for this document is `report.tex` and the media file is `media`, which will contain all images necessary for the report. All modifications in terms of content should happen in this file.
+
 ## Installing LaTeX
 
 I recommend the following software stack for LaTeX workflow:
