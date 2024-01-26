@@ -1,0 +1,7 @@
+steps:
+  verify:
+    image: yoant/docker-texlive
+    commands:
+      - pdflatex -synctex=1 -interaction=nonstopmode report.tex
+      - bibtex report.aux
+      - pdflatex -synctex=1 -interaction=nonstopmode report.tex
