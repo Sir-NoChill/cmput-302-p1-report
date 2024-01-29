@@ -20,7 +20,7 @@
 \acmDOI{N/A}
 
 %% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[CMPUT 302 '24]{}{January 2024}{Edmonton AB}
+\acmConference[CMPUT 302 '24: Illumia Labs]{}{January 2024}{Edmonton AB}
 
 % shorthand for ualberta definition
 \newcommand{\ualberta}{
@@ -80,7 +80,7 @@
 	%% The abstract is a short summary of the work to be presented in the
 	%% article.
 	\begin{abstract}
-	  Report on the severity of and possible remediations for user design errors in Illumia Lab's software %TODO: This is poorly worded
+	  We analyze the functionality and quality of Illumia Lab's \textit{Scenario Builder} to comment on potential improvements and provide a short-term roadmap for development and improvement of the application. We encounter and provide solutions for various problems in the UI, the functionality of the system and the documentation of the program with respect to Human-Computer Interaction principles, Gestalt principles and CRAP design principles. Our solutions follow previously established results from the field of HCI, colour theory as well as results from our experiences as users.
 	\end{abstract}
 
 	\keywords{Human-Computer Interaction, UX Design}
@@ -88,24 +88,53 @@
 	\maketitle
 	
 \section{Introduction}
-	\lipsum[2-4]
+We evaluated the Illumia Lab's \textit{Scenario Builder} for
+\section{System Flaws}
+During our exploration and use of the system, we encountered problems in the UI, the program functionality and the documentation of the program. We outline the most important findings in the following sections.
+\subsection{UI}
+Our results from UI analysis are largely cosmetic, but the current state of the software impedes effective use of the system by the end users. The layout of the system does not efficiently show the information in a given scene and the process of changing a scene takes a large amount of work from the user. Additionally, the system does not have clear indication of the correct user actions and fails to introduce the user to the potential actions at any given point in the scene building process.
 
-\section{Errors}
-	\lipsum[2-4]
+\subsubsection{Colour-Scheme}
+The current colour scheme (Purple (\verb|#07012F|), Blue (\verb|#0191FD|) and Red (\verb|#FC5C00|)) is jarring to the eyes. The literature establishes that red and purple are particularly hard for users to look at for extended periods of time \cite{jonesHumancomputerInteractionDesign1989}.
 
+\subsubsection{Tab Display}
+The current display of tabs in the scene builder fails to effectively show the user the state of the program. Tabs for each scene do not give the user context on the scene's purpose or the information contained therein. The preview pane attempts to mitigate these shortcomings, but the scene-graph display is lacking in relationships to other scenes.
+
+\subsubsection{Preview Pane}
+The alignment in the preview pane is poor, in addition to an absence of dynamic sizing of the screen (for mobile and re-sizable web pages) the utility of the data presented is questionable.
+
+\subsubsection{Ease of Use}
+Building a scene currently takes a minimum of 9 clicks. Although the community has debunked the '3-click rule' \cite{ThreeclickRule2023}, the importance of ease of access for information is still paramount in design. Current research into the concept of 'Interaction Elasticity' \cite{experienceInteractionElasticity} rather enforces the significance of eliminating useless interaction. Currently, the scene builder presents the user with a great deal of useless interaction in the form of these clicks.
+
+\subsection{Functionality}
+The website currently has a number of usability-impacting, unimplemented features. We list the systems impacted here.
+
+\subsubsection{Saving}
+Currently, the system does not allow for saving of a scene or working on a previously saved scene. This prevents the user from creating a well-though-out, well-crafted scene.
+
+\subsubsection{Avatar}
+The use of an avatar does not feel necessary to the development of a scene,  and the stated requirement in the builder is not reflected in the business logic.
+
+\subsection{Documentation}
+In general, the builder lacks documentation. A number of terms and interactions with the software are not explained by the user's interactions with the program.
 \section{Remediations}
 	\lipsum[2-3]
+\subsection{UI}
+\subsection{Functionality}
+\subsection{Documentation}
 
 \section{Suggested Roadmap}
 	\lipsum[2-3]
+\subsection{Scene Representations}
+\subsection{Documentation}
+\subsection{Effective UI}
+\subsection{Color Scheme}
 	
 \section{Conclusion}
 	\lipsum[2-2]
 
 \section{Acknowledgments}
-	\lipsum[2-2]\cite{Abril07}
-
-	
+	\lipsum[2-2]
 
 % bibliography data
 \bibliographystyle{ACM-Reference-Format}
