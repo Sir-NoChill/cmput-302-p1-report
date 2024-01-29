@@ -6,8 +6,8 @@
 	\providecommand\BibTeX{{%
 		\normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
 
-
 \usepackage{lipsum}
+\usepackage{graphicx}
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -117,9 +117,32 @@ The use of an avatar does not feel necessary to the development of a scene,  and
 
 \subsection{Documentation}
 In general, the builder lacks documentation. A number of terms and interactions with the software are not explained by the user's interactions with the program.
+
 \section{Remediations}
-	\lipsum[2-3]
+We propose a number of possible solutions to the problems mentioned above that will improve the usability of the application and touch on additional, smaller problems that we neglect to mention in this report, but are nonetheless important.
+
 \subsection{UI}
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{media/sidebar.png}
+  \end{center}
+\caption{A prototype sidebar navigation system.}\label{fig1}
+\end{figure}
+We suggest a sidebar-based UI such as pictured in Figure \ref{fig1}. This UI paradigm will provide the user with more information on any given scene in the program and allow the user to recognize the full state of the program at a glance without wading through screen after screen of data.
+
+When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design \cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, bettering the user experience.
+
+This type of UI will also make user error handling more visible to the user. Instead of using the single exclamation point, we can highlight all the fields invalid data in the associated page and provide a clear message to the user with respect to the nature of their violations all on one screen. We can also highlight the issues in all scenes by highlighting nodes on the sidebar as required. This way, the user does not need to chase every bug individually and can rather see where every bug is without having to perform trial and error modifications.
+
+\subsubsection{The Scenarios Folder}
+You will notice in the mockup that we have added a scenarios folder, this serves to give the user a space to switch between different scenarios they are beginning to develop and possibly to store other scene elements they use frequently. This will require the implementation of the saving system, but will improve the user's ability to reuse gode as required.
+
+\subsubsection{Log Out}
+The sidebar also contains a Log-Out button, it is assumed that eventually the avatar will be associated to the user in order to create some kind of account for the user to log in and out with. This would be an easy way to implement this feature.
+
+\subsubsection{The Scenario Page}
+
+
 \subsection{Functionality}
 \subsection{Documentation}
 
