@@ -91,13 +91,13 @@
 	
 \section{Introduction}
 We evaluated the Illumia Lab's \textit{Scenario Builder} for
-\section{System Flaws}
+\section{System Flaws}\label{sec:flaws}
 During our exploration and use of the system, we encountered problems in the UI, the program functionality and the documentation of the program. We outline the most important findings in the following sections.
 \subsection{UI}
 Our results from UI analysis are largely cosmetic, but the current state of the software impedes effective use of the system by the end users. The layout of the system does not efficiently show the information in a given scene and the process of changing a scene takes a large amount of work from the user. Additionally, the system does not have clear indication of the correct user actions and fails to introduce the user to the potential actions at any given point in the scene building process.
 
 \subsubsection{Colour-Scheme}
-The current colour scheme (Purple (\verb|#07012F|), Blue (\verb|#0191FD|) and Red (\verb|#FC5C00|)) is jarring to the eyes. The literature establishes that red and purple are particularly hard for users to look at for extended periods of time \cite{jonesHumancomputerInteractionDesign1989}. Some users may prefer a more darker or lighter color scheme and the interface could benefit from a light and dark mode. Furthermore, there are instances where red is used as the colour for the program's desired state when presented with multiple choices. This may have confusing implications towards the user as red is often associated with being a 'negation' or 'emergency' choice when that is not the intention. 
+The current colour scheme (Purple (\verb|#07012F|), Blue (\verb|#0191FD|) and Red (\verb|#FC5C00|)) is jarring to the eyes. The literature establishes that red and purple are particularly hard for users to look at for extended periods of time~\cite{jonesHumancomputerInteractionDesign1989}. Some users may prefer a more darker or lighter color scheme and the interface could benefit from a light and dark mode. Furthermore, there are instances where red is used as the colour for the program's desired state when presented with multiple choices. This may have confusing implications towards the user as red is often associated with being a 'negation' or 'emergency' choice when that is not the intention.
 
 \subsubsection{Tab Display}
 The current display of tabs in the scene builder fails to effectively show the user the state of the program. Tabs for each scene do not give the user context on the scene's purpose or the information contained therein. The preview pane attempts to mitigate these shortcomings, but the scene-graph display is lacking in relationships to other scenes.
@@ -106,7 +106,7 @@ The current display of tabs in the scene builder fails to effectively show the u
 The alignment in the preview pane is poor, in addition to an absence of dynamic sizing of the screen (for mobile and re-sizable web pages) the utility of the data presented is questionable.
 
 \subsubsection{Ease of Use}
-Building a scene currently takes a minimum of 9 clicks. Although the community has debunked the '3-click rule' \cite{ThreeclickRule2023}, the importance of ease of access for information is still paramount in design. Current research into the concept of 'Interaction Elasticity' \cite{experienceInteractionElasticity} rather enforces the significance of eliminating useless interaction. Currently, the scene builder presents the user with a great deal of useless interaction in the form of these clicks.
+Building a scene currently takes a minimum of 9 clicks. Although the community has debunked the '3-click rule'~\cite{ThreeclickRule2023}, the importance of ease of access for information is still paramount in design. Current research into the concept of 'Interaction Elasticity' \cite{experienceInteractionElasticity} rather enforces the significance of eliminating useless interaction. Currently, the scene builder presents the user with a great deal of useless interaction in the form of these clicks.
 
 \subsection{Functionality}
 The website currently has a number of usability-impacting, unimplemented features. We list the systems impacted here.
@@ -132,7 +132,7 @@ We propose a number of possible solutions to the problems mentioned above that w
 \end{figure}
 We suggest a sidebar-based UI such as pictured in Figure \ref{fig1}. This UI paradigm will provide the user with more information on any given scene in the program and allow the user to recognize the full state of the program at a glance without wading through screen after screen of data.
 
-When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design \cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, bettering the user experience.
+When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design~\cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, bettering the user experience.
 
 This type of UI will also make user error handling more visible to the user. Instead of using the single exclamation point, we can highlight all the fields invalid data in the associated page and provide a clear message to the user with respect to the nature of their violations all on one screen. We can also highlight the issues in all scenes by highlighting nodes on the sidebar as required. This way, the user does not need to chase every bug individually and can rather see where every bug is without having to perform trial and error modifications.
 
@@ -193,7 +193,7 @@ We propose changing the UI to reflect our suggestions. This will require making 
 Ideally, this is accompanied by changes in the backend to better reflect the data acquired from the user in their interactions with the program. We will not comment more on the backed due to our lack of exposure.
 
 \subsection{Documentation}
-We propose mounting a separate website for documentation using some easily configurable and customizable system such as Docusaurus \cite{FacebookDocusaurus2024}, GitBook \cite{GitBookKnowledgeManagement} or Docsify \cite{DocsifyjsDocsifyMagical}. This will need to contain the following sections:
+We propose mounting a separate website for documentation using some easily configurable and customizable system such as Docusaurus~\cite{FacebookDocusaurus2024}, GitBook \cite{GitBookKnowledgeManagement} or Docsify \cite{DocsifyjsDocsifyMagical}. This will need to contain the following sections:
 \begin{itemize}
   \item \textbf{Quickstart}: A section to get the user acquainted with the software quickly, exposing them to the most important and relevant features of the program.
   \item \textbf{Introduction}: A section to describe the purpose of the software (possibly pointing to examples of existing systems or your own examples).
@@ -233,19 +233,19 @@ Considering the taste of the current colour scheme (relatively dark and cool col
     \path [->] (B) edge[bend right=60] node {B} (G);
 \end{scope}
 \end{tikzpicture}
-\caption{A depiction of the relationship between scenes using a graph representation. Adapted from \cite{tAnswerDrawGraph2015}}\label{fig:scene_graph}
+\caption{A depiction of the relationship between scenes using a graph representation. Adapted from~\cite{tAnswerDrawGraph2015}}\label{fig:scene_graph}
 \end{figure}
-The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph \cite{ObsidianSharpenYour}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
+The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph~\cite{ObsidianSharpenYour}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
 
 An automatically generated graph could easily be produced from the data in a scene, but rendering the graph would take some engineering, hence the predicted time alottment.
 
-In addition to allowing the user control over the way their scenes interact and providing more detailed information on the scenario structure, this also adds an option for a new type of node creation that could be done visually in the graph. This, though an interesting idea, is left to the reader as a side note.
+In addition to allowing the user control over the way their scenes interact and providing more detailed information on the scenario structure, this also adds an option for a new type of node creation that could be done visually in the graph. This, though an interesting idea, we leave cost-benefit analysis to the reader.
 
 \section{Conclusion}
-	\lipsum[2-2]
+Through the course of this paper, we identify a number of visual, functional and documentation problems throughout the Illumia Labs \textit{Scenario Builder}. We find that the user interface is hard to navigate and invites unnecessary interaction, detracting from the ease of use of the program through aspects such as colour scheme, layout, alignment and contrast, as well as a number of Gestalt principles detailed in section \ref{sec:flaws}. We then propose a five-step plan to correct the presented issues and discuss potential solutions for each identified problem. We expand on some problems with the current UI in the appendix, and discuss the reasons we suggest doing a complete revamp of the UI. Our analysis cites both the literature and popular implementation practices used by the community to provide insight in making the Illumia Labs \textit{Scenario Builder} a more attractive and user-friendly application.
 
 \section{Acknowledgments}
-	\lipsum[2-2]
+We would like to acknowledge the help of our wonderful TA's and professor for guiding us on this journey.
 
 % bibliography data
 \bibliographystyle{ACM-Reference-Format}
@@ -256,14 +256,35 @@ In addition to allowing the user control over the way their scenes interact and 
 %% If your work has an appendix, this is the place to put it.
 \appendix
 
-\section{Research Methods}
-	\lipsum[2-2]
+\section{Notes on the Current UI}
+We found a number of significant problems with the current UI, leading us to suggest a complete revamp of the frontend of the application. The first of which is the navigation pain, as discussed in section \ref{remediations}, but particularly the lack of useful information provided in any given program state. One way to fix this would be to use the loading screens as a form of tutorial, teaching the user how to perform tasks in the program, but as stated above, there is too much useless interaction with the home pages.
 
-\section{Online Resources}
-	\lipsum[2-2]
+Currently, the program also fails to offer a `dashboard-esque' area for clients to view their created scenes or get a feel for the global structure of their scenario. We did not identify an easy way to solve this problem in the current UI paradigm, despite the implementation of a preview pane. Additionally there are misleading interactions in the current UI caused by a clash between the classical implementation of the tab-bar and the implementation presented in the \textit{Scenario Builder} such as the arrow buttons (which we initially expect to move us between tabs) and the drop-down menu for each tab (whose purpose we fail to understand).
+
+With the number of problematic features in the tab-bar paradigm and the community's current affinity for the sidebar, we suggest a re-implementation of the front end using the sidebar paradigm presented in the paper.
+
+
+\section{Additional Functionality issues}
+During our evaluation, we encountered a number of indicated features (in addition to the saving and avatar) that were not implemented or whose implementation was questionable. We present a discussion of each element in depth here.
+
+\subsection{AI Features}
+\subsubsection{Suggest Prompt}
+The suggest prompt option in the scene creation menu creates a prompt seemingly from a writing prompt, and not from the business orientation that we observed in our trial of the system. Improving the prompt engineering in the API call will likely solve this problem. This particular action provides no visual queue to confirm that it has executed, which causes some confusion and may make users suspect it is broken.
+
+\subsubsection{Suggest Transition}
+The suggest transition button on the same screen as the suggest prompt button has no appreciable effect.
+
+\subsubsection{Deletion}
+The option to delete tabs is somewhat cryptic since it deletes tabs in numerical order, while maintaining a complete number line. This couples with user inability to change the name of a scene, which is a significant problem.
+
+\subsubsection{Debugging}
+The current messages to users that a scene or option is invalid only recognizes the first error. Such error mitigation indicators should find all errors before terminating to give the user a better idea of all areas in need of change.
+
+\section{Positive Notes}
+With the amount of criticism we do for these types of systems, it is important to note the positive aspects of a given system. The driving idea for this system has great potential, the use of virtual and augmented reality presents opportunities never before excersized for training and risk-free orientations to complex systems. This system presents an interesting angle of attack for the industry, and with proper implementation of machine learning tools the training opportunities and candidate evaluation techniques available will increase greatly.
 \end{document}
 \endinput
 %%
 %% End of file `sample-lualatex.tex'.
 
-% LocalWords:  alottment paralell
+% LocalWords:  alottment paralell excersized
