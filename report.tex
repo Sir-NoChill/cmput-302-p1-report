@@ -259,7 +259,7 @@ We would like to acknowledge the help of our wonderful TA's and professor for gu
 \section{Notes on the Current UI}
 We found a number of significant problems with the current UI, leading us to suggest a complete revamp of the frontend of the application. The first of which is the navigation pain, as discussed in section \ref{remediations}, but particularly the lack of useful information provided in any given program state. One way to fix this would be to use the loading screens as a form of tutorial, teaching the user how to perform tasks in the program, but as stated above, there is too much useless interaction with the home pages.
 
-Currently, the program also fails to offer a `dashboard-esque' area for clients to view their created scenes or get a feel for the global structure of their scenario. We did not identify an easy way to solve this problem in the current UI paradigm, despite the implementation of a preview pane. Additionally there are misleading interactions in the current UI caused by a clash between the classical implementation of the tab-bar and the implementation presented in the \textit{Scenario Builder} such as the arrow buttons (which we initially expect to move us between tabs) and the drop-down menu for each tab (whose purpose we fail to understand).
+Currently, the program also fails to offer a `dashboard-esque' area for clients to view their created scenes or get a feel for the global structure of their scenario. We did not identify an easy way to solve this problem in the current UI paradigm, despite the implementation of a preview pane. Additionally, there are misleading interactions in the current UI caused by a clash between the classical implementation of the tab-bar and the implementation presented in the \textit{Scenario Builder}, such as the arrow buttons (which we initially expect to move us between tabs) and the drop-down-delete menu that could be moved into the tab itself.
 
 With the number of problematic features in the tab-bar paradigm and the community's current affinity for the sidebar, we suggest a re-implementation of the front end using the sidebar paradigm presented in the paper.
 
@@ -280,6 +280,19 @@ The option to delete tabs is somewhat cryptic since it deletes tabs in numerical
 
 \subsubsection{Debugging}
 The current messages to users that a scene or option is invalid only recognizes the first error. Such error mitigation indicators should find all errors before terminating to give the user a better idea of all areas in need of change.
+
+\subsection{Avatar Builder Issues}
+\subsubsection{Avatar URL}
+Manual entry for avatar URL is confusing and lacks guidance on obtaining a URL. Additionally, the avatar URL entry sometimes fails to appear for input.
+
+\subsubsection{Saving the Avatar}
+The 'Next' button does not save the avatar, misleading the user.
+
+\subsubsection{Language Selector}
+Language selection issues in the avatar builder, this presents a strange bug where users are redirected unexpectedly to the outfit section of the builder when they decide to change their language. This language change also fails to translate many UI elements into the target language.
+
+\subsubsection{Exporting Avatars}
+Lack of export or save option for avatars. There is a need for a proper saving functionality, perhaps including unique avatar creation IDs, incorporating an account-like system.
 
 \section{Positive Notes}
 With the amount of criticism we do for these types of systems, it is important to note the positive aspects of a given system. The driving idea for this system has great potential, the use of virtual and augmented reality presents opportunities never before excersized for training and risk-free orientations to complex systems. This system presents an interesting angle of attack for the industry, and with proper implementation of machine learning tools the training opportunities and candidate evaluation techniques available will increase greatly.
