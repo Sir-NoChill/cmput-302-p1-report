@@ -183,7 +183,9 @@ Due to the number of distinct faults we suggest changing and their complexity, w
   \item \textbf{~2-4 days} Choose a different colour scheme
   \item \textbf{~4-6 weeks} Add a graph representation of the scenes and their interactions
 \end{itemize}
-For a grand total of ~20 weeks of work. We will detail the phases below:
+For a grand total of ~20 weeks of work. We will detail the phases below.
+
+We should note that much of this work can be done colaboratively and in paralell, thus the work cycle should not take the full 20 weeks we estimate.
 
 \subsection{UI Revamp}
 We propose changing the UI to reflect our suggestions. This will require making a new landing page and then implementing the business logic and making the appropriate changes to the representation and functionality we described in section \ref{remediations}.
@@ -191,7 +193,7 @@ We propose changing the UI to reflect our suggestions. This will require making 
 Ideally, this is accompanied by changes in the backend to better reflect the data acquired from the user in their interactions with the program. We will not comment more on the backed due to our lack of exposure.
 
 \subsection{Documentation}
-We propose mounting a separate website for documentation using some easily configurable and customizable system such as Docusaurus \cite{docusaurus}, GitBook \cite{GitBook} or Docsify \cite{Docsify}. This will need to contain the following sections:
+We propose mounting a separate website for documentation using some easily configurable and customizable system such as Docusaurus \cite{FacebookDocusaurus2024}, GitBook \cite{GitBookKnowledgeManagement} or Docsify \cite{DocsifyjsDocsifyMagical}. This will need to contain the following sections:
 \begin{itemize}
   \item \textbf{Quickstart}: A section to get the user acquainted with the software quickly, exposing them to the most important and relevant features of the program.
   \item \textbf{Introduction}: A section to describe the purpose of the software (possibly pointing to examples of existing systems or your own examples).
@@ -233,7 +235,7 @@ Considering the taste of the current colour scheme (relatively dark and cool col
 \end{tikzpicture}
 \caption{A depiction of the relationship between scenes using a graph representation.}\label{fig:scene_graph}
 \end{figure}
-The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph \cite{Obsidian}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
+The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph \cite{ObsidianSharpenYour}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
 
 An automatically generated graph could easily be produced from the data in a scene, but rendering the graph would take some engineering, hence the predicted time alottment.
 
