@@ -1,4 +1,4 @@
-\documentclass[sigart]{acmart} %use acmart_mod for handin
+\documentclass[sigart]{acmart_mod} %use acmart_mod for handin
 % NOTE: To make the documnet anonymous, use the command \documentclass[sigconf, anonymous]{acmart}
 %
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -85,7 +85,7 @@
 	\maketitle
 	
 \section{Introduction}
-	  We analyze the functionality and quality of Illumia Lab's \textit{Scenario Builder} to comment on potential improvements and provide a short-term roadmap for development and improvement of the application. We encounter and provide solutions for various problems in the UI, the functionality of the system and the documentation of the program with respect to Human-Computer Interaction principles, Gestalt principles and CRAP design principles. Our solutions follow previously established results from the field of HCI, colour theory as well as results from our experiences as users.
+We analyze the functionality and quality of Illumia Lab's \textit{Scenario Builder} to comment on potential improvements and provide a short-term roadmap for development and improvement of the application. We encounter and provide solutions for various problems in the UI, the functionality of the system and the documentation of the program with respect to Human-Computer Interaction principles, Gestalt principles and CRAP design principles. Our solutions follow previously established results from the field of HCI, colour theory as well as results from our experiences as users.
 \section{System Flaws}\label{sec:flaws}
 During our exploration and use of the system, we encountered problems in the UI, the program functionality and the documentation of the program. We outline the most important findings in the following sections.
 \subsection{UI}
@@ -245,39 +245,6 @@ We would like to acknowledge the help of our wonderful TA's and professor for gu
 % bibliography data
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{bibliography}
-
-\section*{Appendices}
-%%
-%% If your work has an appendix, this is the place to put it.
-\appendix
-
-\section{Notes on the Current UI}
-We found a number of significant problems with the current UI, leading us to suggest a complete revamp of the frontend of the application. The first of which is the navigation pain, as discussed in section \ref{remediations}, but particularly the lack of useful information provided in any given program state. One way to fix this would be to use the loading screens as a form of tutorial, teaching the user how to perform tasks in the program, but as stated above, there is too much useless interaction with the home pages.
-
-Currently, the program also fails to offer a `dashboard-esque' area for clients to view their created scenes or get a feel for the global structure of their scenario. We did not identify an easy way to solve this problem in the current UI paradigm, despite the implementation of a preview pane. Additionally there are misleading interactions in the current UI caused by a clash between the classical implementation of the tab-bar and the implementation presented in the \textit{Scenario Builder} such as the arrow buttons (which we initially expect to move us between tabs) and the drop-down menu for each tab (whose purpose we fail to understand).
-
-With the number of problematic features in the tab-bar paradigm and the community's current affinity for the sidebar, we suggest a re-implementation of the front end using the sidebar paradigm presented in the paper.
-
-
-\section{Additional Functionality issues}
-During our evaluation, we encountered a number of indicated features (in addition to the saving and avatar) that were not implemented or whose implementation was questionable. We present a discussion of each element in depth here.
-
-\subsection{AI Features}
-\subsubsection{Suggest Prompt}
-The suggest prompt option in the scene creation menu creates a prompt seemingly from a writing prompt, and not from the business orientation that we observed in our trial of the system. Improving the prompt engineering in the API call will likely solve this problem. This particular action provides no visual queue to confirm that it has executed, which causes some confusion and may make users suspect it is broken.
-
-\subsubsection{Suggest Transition}
-The suggest transition button on the same screen as the suggest prompt button has no appreciable effect.
-
-\subsection{Quality of Life features}
-\subsubsection{Deletion}
-The option to delete tabs is somewhat cryptic since it deletes tabs in numerical order, while maintaining a complete number line. This couples with user inability to change the name of a scene, which is a significant problem.
-
-\subsubsection{Debugging}
-The current messages to users that a scene or option is invalid only recognizes the first error. Such error mitigation indicators should find all errors before terminating to give the user a better idea of all areas in need of change.
-
-\section{Positive Notes}
-With the amount of criticism we do for these types of systems, it is important to note the positive aspects of a given system. The driving idea for this system has great potential, the use of virtual and augmented reality presents opportunities never before excersized for training and risk-free orientations to complex systems. This system presents an interesting angle of attack for the industry, and with proper implementation of machine learning tools the training opportunities and candidate evaluation techniques available will increase greatly.
 \end{document}
 \endinput
 %%
