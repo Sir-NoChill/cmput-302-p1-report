@@ -85,35 +85,44 @@
 	\maketitle
 	
 \section{Introduction}
-We analyze the functionality and quality of Illumia Lab's \textit{Scenario Builder} to comment on potential improvements and provide a short-term roadmap for development and improvement of the application. We encounter and provide solutions for various problems in the UI, the functionality of the system and the documentation of the program with respect to Human-Computer Interaction principles, Gestalt principles and CRAP design principles. Our solutions follow previously established results from the field of HCI, colour theory as well as results from our experiences as users.
+We assess Illumia Lab's \textit{Scenario Builder} to identify areas for enhancement and offer a short-term development roadmap. We address issues in UI, system functionality, and program documentation, drawing upon Human-Computer Interaction (HCI), Gestalt, and CRAP design principles. Our solutions align with established HCI research, color theory, and user experience insights.
 \section{System Flaws}\label{sec:flaws}
-During our exploration and use of the system, we encountered problems in the UI, the program functionality and the documentation of the program. We outline the most important findings in the following sections.
+Throughout our investigation and utilization of the system, we identified issues in the UI, program functionality, and documentation. We highlight the key findings in the subsequent sections.
 \subsection{UI}
-Our results from UI analysis are largely cosmetic, but the current state of the software impedes effective use of the system by the end users. The layout of the system does not efficiently show the information in a given scene and the process of changing a scene takes a large amount of work from the user. Additionally, the system does not have clear indication of the correct user actions and fails to introduce the user to the potential actions at any given point in the scene building process.
 
-\subsubsection{Colour-Scheme}
-The current colour scheme (Purple (\verb|#07012F|), Blue (\verb|#0191FD|) and Red (\verb|#FC5C00|)) is jarring to the eyes. The literature establishes that red and purple are particularly hard for users to look at for extended periods of time~\cite{jonesHumancomputerInteractionDesign1989}. Some users may prefer a more darker or lighter color scheme and the interface could benefit from a light and dark mode. Furthermore, there are instances where red is used as the colour for the program's desired state when presented with multiple choices. This may have confusing implications towards the user as red is often associated with being a 'negation' or 'emergency' choice when that is not the intention.
+Our examination of the UI primarily addresses cosmetic issues, yet the current software state hinders effective user interaction. The layout fails to efficiently display scene information, and scene transitioning demands excessive user effort. Moreover, clear indications of appropriate user actions are lacking throughout the scene-building process.
+
+\subsubsection{Color Scheme}
+
+The existing color scheme (Purple (\verb|#07012F|), Blue (\verb|#0191FD|), and Red (\verb|#FC5C00|)) is visually straining. Research indicates that prolonged exposure to red and purple hues can be taxing for users~\cite{jonesHumancomputerInteractionDesign1989}. Some users may prefer alternative color schemes, and implementing a light and dark mode could enhance interface versatility. Additionally, the use of red to signify the program's desired state among multiple choices may confuse users, given red's association with 'negation' or 'emergency' decisions.
 
 \subsubsection{Tab Display}
-The current display of tabs in the scene builder fails to effectively show the user the state of the program. Tabs for each scene do not give the user context on the scene's purpose or the information contained therein. The preview pane attempts to mitigate these shortcomings, but the scene-graph display is lacking in relationships to other scenes.
+
+The current tab display in the scene builder inadequately communicates the program's status to users. Tabs for each scene lack context regarding their purpose or contained information. Although the preview pane partially addresses this issue, the scene-graph representation lacks clarity regarding scene relationships.
 
 \subsubsection{Preview Pane}
-The alignment in the preview pane is poor, in addition to an absence of dynamic sizing of the screen (for mobile and re-sizable web pages) the utility of the data presented is questionable.
+
+The preview pane suffers from poor alignment and lacks dynamic screen resizing, diminishing the utility of presented data, especially for mobile and resizable web pages.
 
 \subsubsection{Ease of Use}
-Building a scene currently takes a minimum of 9 clicks. Although the community has debunked the '3-click rule'~\cite{ThreeclickRule2023}, the importance of ease of access for information is still paramount in design. Current research into the concept of 'Interaction Elasticity' \cite{experienceInteractionElasticity} rather enforces the significance of eliminating useless interaction. Currently, the scene builder presents the user with a great deal of useless interaction in the form of these clicks.
+
+Constructing a scene currently requires a minimum of 9 clicks. While the '3-click rule' has been debunked~\cite{ThreeclickRule2023}, ensuring ease of information access remains crucial in design. Recent research on 'Interaction Elasticity' underscores the importance of minimizing unnecessary interactions~\cite{experienceInteractionElasticity}. Presently, the scene builder imposes excessive interaction burdens on users through these clicks.
 
 \subsection{Functionality}
-The website currently has a number of usability-impacting, unimplemented features. We list the systems impacted here.
+
+The website currently lacks implementation of several usability-enhancing features, impacting user experience. We outline the affected systems below.
 
 \subsubsection{Saving}
-Currently, the system does not allow for saving of a scene or working on a previously saved scene. This prevents the user from creating a well-though-out, well-crafted scene.
+
+At present, the system does not support scene saving or the ability to resume work on previously saved scenes. This limitation hampers users' ability to create meticulously crafted scenes.
 
 \subsubsection{Avatar}
-The use of an avatar does not feel necessary to the development of a scene,  and the stated requirement in the builder is not reflected in the business logic.
+
+The inclusion of an avatar in scene development appears superfluous, as its necessity is not reflected in the builder's stated requirements or business logic. Observing the intention to include the avatar, we assume that this feature is not yet implemented.
 
 \subsection{Documentation}
-In general, the builder lacks documentation. A number of terms and interactions with the software are not explained by the user's interactions with the program.
+
+Overall, the builder suffers from inadequate documentation. Many terms and software interactions remain unexplained, decreasing user understanding of the program's functionality.
 
 \section{Remediations}\label{remediations}
 We propose a number of possible solutions to the problems mentioned above that will improve the usability of the application and touch on additional, smaller problems that we neglect to mention in this report, but are nonetheless important.
@@ -237,8 +246,10 @@ An automatically generated graph could easily be produced from the data in a sce
 In addition to allowing the user control over the way their scenes interact and providing more detailed information on the scenario structure, this also adds an option for a new type of node creation that could be done visually in the graph. This, though an interesting idea, we leave cost-benefit analysis to the reader.
 
 \section{Conclusion}
-Through the course of this paper, we identify a number of visual, functional and documentation problems throughout the Illumia Labs \textit{Scenario Builder}. We find that the user interface is hard to navigate and invites unnecessary interaction, detracting from the ease of use of the program through aspects such as colour scheme, layout, alignment and contrast, as well as a number of Gestalt principles detailed in section \ref{sec:flaws}. We then propose a five-step plan to correct the presented issues and discuss potential solutions for each identified problem. We expand on some problems with the current UI in the appendix, and discuss the reasons we suggest doing a complete revamp of the UI. Our analysis cites both the literature and popular implementation practices used by the community to provide insight in making the Illumia Labs \textit{Scenario Builder} a more attractive and user-friendly application.
 
+Throughout this paper, we have highlighted various visual, functional, and documentation deficiencies within the Illumia Labs \textit{Scenario Builder}. Our assessment reveals a user interface that is cumbersome to navigate, characterized by unnecessary interactions, which diminishes program usability. Issues such as color scheme, layout, alignment, and contrast, as well as several Gestalt principles outlined in Section \ref{sec:flaws}, contribute to this usability challenge.
+
+In response, we propose a comprehensive five-step plan to rectify these identified issues, offering potential solutions for each problem. Additionally, we delve into specific UI problems in the appendix and advocate for a complete overhaul of the UI. Our analysis draws from both scholarly literature and prevalent community practices, providing valuable insights to enhance the attractiveness and user-friendliness of the Illumia Labs \textit{Scenario Builder}.
 % bibliography data
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{bibliography}
