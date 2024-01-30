@@ -6,8 +6,10 @@
 	\providecommand\BibTeX{{%
 		\normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
 
-
 \usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -117,19 +119,128 @@ The use of an avatar does not feel necessary to the development of a scene,  and
 
 \subsection{Documentation}
 In general, the builder lacks documentation. A number of terms and interactions with the software are not explained by the user's interactions with the program.
-\section{Remediations}
-	\lipsum[2-3]
+
+\section{Remediations}\label{remediations}
+We propose a number of possible solutions to the problems mentioned above that will improve the usability of the application and touch on additional, smaller problems that we neglect to mention in this report, but are nonetheless important.
+
 \subsection{UI}
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{media/sidebar.png}
+  \end{center}
+\caption{A prototype sidebar navigation system.}\label{fig1}
+\end{figure}
+We suggest a sidebar-based UI such as pictured in Figure \ref{fig1}. This UI paradigm will provide the user with more information on any given scene in the program and allow the user to recognize the full state of the program at a glance without wading through screen after screen of data.
+
+When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design \cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, bettering the user experience.
+
+This type of UI will also make user error handling more visible to the user. Instead of using the single exclamation point, we can highlight all the fields invalid data in the associated page and provide a clear message to the user with respect to the nature of their violations all on one screen. We can also highlight the issues in all scenes by highlighting nodes on the sidebar as required. This way, the user does not need to chase every bug individually and can rather see where every bug is without having to perform trial and error modifications.
+
+\subsubsection{The Scenarios Folder}
+You will notice in the mockup that we have added a scenarios folder, this serves to give the user a space to switch between different scenarios they are beginning to develop and possibly to store other scene elements they use frequently. This will require the implementation of the saving system, but will improve the user's ability to reuse gode as required.
+
+\subsubsection{Log Out}
+The sidebar also contains a Log-Out button, it is assumed that eventually the avatar will be associated to the user in order to create some kind of account for the user to log in and out with. This would be an easy way to implement this feature.
+
+\subsubsection{The Scenario Page}
+\begin{figure*}
+  \begin{center}
+	\includegraphics[scale=0.5]{media/Scene_Page.png}
+  \end{center}
+\caption{A mockup of a scene page for editing individual scenes in the program}\label{fig2}
+\end{figure*}
+The accompanying scenario page shown in Figure \ref{fig2} will give the user the options to input all necessary data and efficiently view all of their options. This will provide a visual interface for the user to modify their scene without added interaction.
+
+Additionally, there is the option to outline the elements in red or some other colour to indicate a non-conforming piece of data. In the tab like display, the user is not aware of the exact location of flaws in their data.
+
+We could also implement a dropdown in the sidebar in each scene tat gives a short summary of the data entered and can also indicate errors in the data entry. This will give users an even more general view of their scene.
+
+\textbf{Note}: We are unsure of the difference between the emotion and reaction elements. The two descriptions seem to be linked, and as such we wonder if the program could eliminate one or the other.
+
 \subsection{Functionality}
+With the implementation of a sidebar navigation paradigm, we can eliminate the need for a lot of the confusing actions that were present in the tab layout. This includes the arrows above the tabs and the delete button (which could now be placed on the sidebar element or in its dropdown menu), as well as a myriad of alignment problems. Now the data has one single point of control that can be stored as one object for manipulation and viewing.
+
+\subsubsection{Saving}
+We suggest that the 'Scenarios' folder hold all of the user's stored scenarios. The user's account status and data could be put on a ribbon across the top of the screen, potentially containing links to the other tools Illumia Labs licenses.
+
+This would not only allow users to store their previously constructed scenarios and use template ideas, but also encourage the use of the entire ecosystem developed by Illumia Labs.
+
+\subsubsection{Avatar}
+We further suggest that the avatar become part of an account creation process and eliminate the functionality from the scenario builder itself. This would eliminate the confusion caused by the opening scene both asking for an avatar and allowing them to continue without one.
+
+In addition, removing the avatar creator from the builder allows us to abstract the account away from the business logic in the builder, which will allow better system-level encapsulation.
+
 \subsection{Documentation}
 
+Developing succinct and useful documentation will help the user experience immensely. Currently, it is unclear what the scenario builder does based on the interface. We suggest adding a 'help' icon to present a brief description of what a given element does and pointing the user to a full documentation page if the logic is too complex to describe in a tooltip.
+
 \section{Suggested Roadmap}
-	\lipsum[2-3]
-\subsection{Scene Representations}
+Due to the number of distinct faults we suggest changing and their complexity, we suggest proceeding with the following roadmap in mind:
+\begin{itemize}
+  \item \textbf{~4-6 weeks} UI Revamp
+  \item \textbf{~4-6 weeks} Documentation site
+  \item \textbf{~1 week} Integrate the documentation as tooltips and links on the UI
+  \item \textbf{~2-4 days} Choose a different colour scheme
+  \item \textbf{~4-6 weeks} Add a graph representation of the scenes and their interactions
+\end{itemize}
+For a grand total of ~20 weeks of work. We will detail the phases below.
+
+We should note that much of this work can be done collaboratively and in paralell, thus the work cycle should not take the full 20 weeks we estimate.
+
+\subsection{UI Revamp}
+We propose changing the UI to reflect our suggestions. This will require making a new landing page and then implementing the business logic and making the appropriate changes to the representation and functionality we described in section \ref{remediations}.
+
+Ideally, this is accompanied by changes in the backend to better reflect the data acquired from the user in their interactions with the program. We will not comment more on the backed due to our lack of exposure.
+
 \subsection{Documentation}
-\subsection{Effective UI}
-\subsection{Color Scheme}
-	
+We propose mounting a separate website for documentation using some easily configurable and customizable system such as Docusaurus \cite{FacebookDocusaurus2024}, GitBook \cite{GitBookKnowledgeManagement} or Docsify \cite{DocsifyjsDocsifyMagical}. This will need to contain the following sections:
+\begin{itemize}
+  \item \textbf{Quickstart}: A section to get the user acquainted with the software quickly, exposing them to the most important and relevant features of the program.
+  \item \textbf{Introduction}: A section to describe the purpose of the software (possibly pointing to examples of existing systems or your own examples).
+  \item \textbf{Documentation}: A section to fully document all features of the site, including individual actions the user can perform and their expected effect. This section may also contain information as to data input requirements and data use and privacy.
+\end{itemize}
+\subsection{Integrate Documentation}
+This consists of linking the documentation created in the previous step and linking it to the correct element associated with the action. This also embodies the creation of tooltips and help buttons as required on every screen. This will allow the user to quickly and efficiently find the answer to their question and increase the usability of the site in general.
+
+\subsection{New Colour Scheme}
+Considering the taste of the current colour scheme (relatively dark and cool colours), we suggest implementing a colour scheme of complimentary colours.
+
+\subsection{Graph Representation}
+\begin{figure}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={rectangle,thick,draw}]
+    \node (A) at (0,0) {S3};
+    \node (B) at (0,3) {S4};
+    \node (C) at (2.5,4) {S2};
+    \node (D) at (2.5,1) {S1};
+    \node (E) at (2.5,-1.5) {Start};
+    \node (F) at (5,3) {Success} ;
+	\node (G) at (-1, -2.4) {Failure};
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,circle},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (A) edge node {A} (B);
+    \path [->] (B) edge node {A} (C);
+    \path [->] (D) edge node {C} (A);
+    \path [->] (D) edge node {B} (C);
+    \path [->] (A) edge node {B} (G);
+    \path [->] (D) edge node {D} (G);
+    \path [->] (D) edge node {A} (F);
+    \path [->] (C) edge node {A} (F);
+    \path [->] (E) edge (D);
+    \path [->] (B) edge[bend right=60] node {B} (G);
+\end{scope}
+\end{tikzpicture}
+\caption{A depiction of the relationship between scenes using a graph representation. Adapted from \cite{tAnswerDrawGraph2015}}\label{fig:scene_graph}
+\end{figure}
+The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph \cite{ObsidianSharpenYour}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
+
+An automatically generated graph could easily be produced from the data in a scene, but rendering the graph would take some engineering, hence the predicted time alottment.
+
+In addition to allowing the user control over the way their scenes interact and providing more detailed information on the scenario structure, this also adds an option for a new type of node creation that could be done visually in the graph. This, though an interesting idea, is left to the reader as a side note.
+
 \section{Conclusion}
 	\lipsum[2-2]
 
@@ -154,3 +265,5 @@ In general, the builder lacks documentation. A number of terms and interactions 
 \endinput
 %%
 %% End of file `sample-lualatex.tex'.
+
+% LocalWords:  alottment paralell
