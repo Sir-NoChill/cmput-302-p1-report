@@ -8,6 +8,8 @@
 
 \usepackage{lipsum}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -175,11 +177,11 @@ Developing succinct and useful documentation will help the user experience immen
 \section{Suggested Roadmap}
 Due to the number of distinct faults we suggest changing and their complexity, we suggest proceeding with the following roadmap in mind:
 \begin{itemize}
-  \item \textbf{~4-6} week UI Revamp
-  \item \textbf{~4-6} weeks Documentation site
+  \item \textbf{~4-6 weeks} UI Revamp
+  \item \textbf{~4-6 weeks} Documentation site
   \item \textbf{~1 week} Integrate the documentation as tooltips and links on the UI
   \item \textbf{~2-4 days} Choose a different colour scheme
-  \item \textbf{~4-6} weeks Add a graph representation of the scenes and their interactions
+  \item \textbf{~4-6 weeks} Add a graph representation of the scenes and their interactions
 \end{itemize}
 For a grand total of ~20 weeks of work. We will detail the phases below:
 
@@ -199,10 +201,44 @@ We propose mounting a separate website for documentation using some easily confi
 This consists of linking the documentation created in the previous step and linking it to the correct element associated with the action. This also embodies the creation of tooltips and help buttons as required on every screen. This will allow the user to quickly and efficiently find the answer to their question and increase the usability of the site in general.
 
 \subsection{New Colour Scheme}
+Considering the taste of the current colour scheme (relatively dark and cool colours), we suggest implementing a colour scheme of complimentary colours.
 
-\subsection{Effective UI}
-\subsection{Color Scheme}
-	
+\subsection{Graph Representation}
+\begin{figure}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={rectangle,thick,draw}]
+    \node (A) at (0,0) {S3};
+    \node (B) at (0,3) {S4};
+    \node (C) at (2.5,4) {S2};
+    \node (D) at (2.5,1) {S1};
+    \node (E) at (2.5,-1.5) {Start};
+    \node (F) at (5,3) {Success} ;
+	\node (G) at (-1, -2.4) {Failure};
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,circle},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (A) edge node {A} (B);
+    \path [->] (B) edge node {A} (C);
+    \path [->] (D) edge node {C} (A);
+    \path [->] (D) edge node {B} (C);
+    \path [->] (A) edge node {B} (G);
+    \path [->] (D) edge node {D} (G);
+    \path [->] (D) edge node {A} (F);
+    \path [->] (C) edge node {A} (F);
+    \path [->] (E) edge (D);
+    \path [->] (B) edge[bend right=60] node {B} (G);
+\end{scope}
+\end{tikzpicture}
+\caption{A depiction of the relationship between scenes using a graph representation.}\label{fig:scene_graph}
+\end{figure}
+The graph representation of scenes will serve as a replacement for the preview panel. Instead of providing a text based representation of the relationships between scenes, consider providing a visual one such as displayed in figure \ref{fig:scene_graph}. A popular example comes from Obsidian's knowledge graph \cite{Obsidian}, which contains back-links and grouping to visually demonstrate the relationship between different nodes in the graph.
+
+An automatically generated graph could easily be produced from the data in a scene, but rendering the graph would take some engineering, hence the predicted time alottment.
+
+In addition to allowing the user control over the way their scenes interact and providing more detailed information on the scenario structure, this also adds an option for a new type of node creation that could be done visually in the graph. This, though an interesting idea, is left to the reader as a side note.
+
 \section{Conclusion}
 	\lipsum[2-2]
 
@@ -227,3 +263,5 @@ This consists of linking the documentation created in the previous step and link
 \endinput
 %%
 %% End of file `sample-lualatex.tex'.
+
+% LocalWords:  alottment
