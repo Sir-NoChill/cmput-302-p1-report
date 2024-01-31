@@ -130,18 +130,18 @@ We propose a number of possible solutions to the problems mentioned above that w
 \subsection{UI}
 \begin{figure}
   \begin{center}
-  \includegraphics[scale=0.4]{media/sidebar.png}
+  \includegraphics[scale=0.4, angle=270]{media/sidebar.png}
   \end{center}
 \caption{A prototype sidebar navigation system.}\label{fig1}
 \end{figure}
 We suggest a sidebar-based UI such as pictured in Figure \ref{fig1}. This UI paradigm will provide the user with more information on any given scene in the program and allow the user to recognize the full state of the program at a glance without wading through screen after screen of data.
 
-When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design~\cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, bettering the user experience.
+When combined with an information page for the selected screen (or the graph view of connections between scenes), we can give the user a more granular view of the data. It is important to note that this type of modification is an overhaul of the frontend design for the website, so the transition will not be easy but the application of this type of UI is well loved in modern UI design~\cite{YourConnectedWorkspace} \cite{SupabaseOpenSource} \cite{FlutterBuildApps}. Adding the flexibility for the user to navigate to any scene in a single click will then reduce useless interaction with the program, improving the user experience.
 
-This type of UI will also make user error handling more visible to the user. Instead of using the single exclamation point, we can highlight all the fields invalid data in the associated page and provide a clear message to the user with respect to the nature of their violations all on one screen. We can also highlight the issues in all scenes by highlighting nodes on the sidebar as required. This way, the user does not need to chase every bug individually and can rather see where every bug is without having to perform trial and error modifications.
+This type of UI will also make error handling more visible to the user. Instead of using the single exclamation point, we can highlight all the fields invalid data in the associated page and provide a clear message to the user with respect to the nature of their violations all on one screen. We can also highlight the issues in all scenes by highlighting nodes on the sidebar as required. This way, the user does not need to chase every bug individually and can rather see where every bug is without having to perform trial and error modifications.
 
 \subsubsection{The Scenarios Folder}
-You will notice in the mockup that we have added a scenarios folder, this serves to give the user a space to switch between different scenarios they are beginning to develop and possibly to store other scene elements they use frequently. This will require the implementation of the saving system, but will improve the user's ability to reuse gode as required.
+You will notice in the mockup that we have added a scenarios folder. This serves to give the user a space to switch between different scenarios they are developing, and possibly to store scene elements they use frequently.
 
 \subsubsection{Log Out}
 The sidebar also contains a Log-Out button, it is assumed that eventually the avatar will be associated to the user in order to create some kind of account for the user to log in and out with. This would be an easy way to implement this feature.
@@ -155,24 +155,23 @@ The sidebar also contains a Log-Out button, it is assumed that eventually the av
 \end{figure*}
 The accompanying scenario page shown in Figure \ref{fig2} will give the user the options to input all necessary data and efficiently view all of their options. This will provide a visual interface for the user to modify their scene without added interaction.
 
-Additionally, there is the option to outline the elements in red or some other colour to indicate a non-conforming piece of data. In the tab like display, the user is not aware of the exact location of flaws in their data.
+Additionally, there is the option to outline the elements in red or some other colour to indicate a non-conforming piece of data.
 
 We could also implement a dropdown in the sidebar in each scene tat gives a short summary of the data entered and can also indicate errors in the data entry. This will give users an even more general view of their scene.
 
 \textbf{Note}: We are unsure of the difference between the emotion and reaction elements. The two descriptions seem to be linked, and as such we wonder if the program could eliminate one or the other.
 
 \subsection{Functionality}
-With the implementation of a sidebar navigation paradigm, we can eliminate the need for a lot of the confusing actions that were present in the tab layout. This includes the arrows above the tabs and the delete button (which could now be placed on the sidebar element or in its dropdown menu), as well as a myriad of alignment problems. Now the data has one single point of control that can be stored as one object for manipulation and viewing.
+
+Introducing a sidebar navigation paradigm can streamline the user experience by simplifying actions previously executed through the tab layout. This includes eliminating arrows above tabs and the delete button, which can now be integrated into the sidebar element or its dropdown menu. Additionally, this paradigm resolves various alignment issues, consolidating data control into a single point for easier manipulation and viewing.
 
 \subsubsection{Saving}
-We suggest that the 'Scenarios' folder hold all of the user's stored scenarios. The user's account status and data could be put on a ribbon across the top of the screen, potentially containing links to the other tools Illumia Labs licenses.
 
-This would not only allow users to store their previously constructed scenarios and use template ideas, but also encourage the use of the entire ecosystem developed by Illumia Labs.
+We propose organizing all user-stored scenarios within a dedicated 'Scenarios' folder. Account status and data could be displayed on a ribbon across the screen's top, potentially featuring links to other tools licensed by Illumia Labs. This approach not only facilitates scenario storage and template usage, but also promotes engagement with Illumia Labs' entire ecosystem.
 
 \subsubsection{Avatar}
-We further suggest that the avatar become part of an account creation process and eliminate the functionality from the scenario builder itself. This would eliminate the confusion caused by the opening scene both asking for an avatar and allowing them to continue without one.
 
-In addition, removing the avatar creator from the builder allows us to abstract the account away from the business logic in the builder, which will allow better system-level encapsulation.
+We recommend integrating the avatar creation process into the account creation phase and removing avatar functionality from the scenario builder. This eliminates confusion arising from the opening scene's request for an avatar while allowing users to proceed without one. Additionally, abstracting the avatar creator from the builder decouples account logic from the builder's business logic, leading to improved system-level encapsulation.
 
 \subsection{Documentation}
 
